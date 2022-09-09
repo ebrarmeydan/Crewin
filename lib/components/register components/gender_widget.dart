@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_3d_choice_chip/flutter_3d_choice_chip.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -44,11 +42,9 @@ class _GenderWidgetState extends State<GenderWidget> {
             },
             onUnSelected: () {},
             selected: _gender == 1,
-            child: Container(
-              padding: EdgeInsets.all(10),
-              child: Column(
+            child: Column(
                 children: [
-                  Icon(Icons.male, size: 100),
+                  const Icon(Icons.male, size: 100),
                   const SizedBox(height: 5),
                   Text("Male",
                       style: GoogleFonts.poppins(
@@ -58,7 +54,7 @@ class _GenderWidgetState extends State<GenderWidget> {
                       )),
                 ],
               ),
-            )),
+            ),
         ChoiceChip3D(
             border: Border.all(color: Colors.grey),
             width: 165.w,
@@ -74,7 +70,7 @@ class _GenderWidgetState extends State<GenderWidget> {
             onUnSelected: () {},
             child: Column(
               children: [
-                Icon(Icons.female, size: 100),
+                const Icon(Icons.female, size: 100),
                 const SizedBox(height: 5),
                 Text("Female",
                     style: GoogleFonts.poppins(

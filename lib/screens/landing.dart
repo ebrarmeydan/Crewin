@@ -1,13 +1,10 @@
-import 'dart:ui';
 import 'package:crewin_ornek_proje/components/landing%20components/my_animation.dart';
-import 'package:crewin_ornek_proje/screens/home.dart';
-import 'package:crewin_ornek_proje/screens/register/register_main.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'home.dart';
+import 'register/register_main.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({Key? key}) : super(key: key);
@@ -19,7 +16,6 @@ class LandingPage extends StatefulWidget {
 class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: SizedBox(
         width: double.infinity,
@@ -31,10 +27,10 @@ class _LandingPageState extends State<LandingPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  MyAnimation(),
+                  const MyAnimation(),
                   SizedBox(height: 16.w),
                   Container(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: Text(
                         "Description of Test Pro \nDescription of Test Pro \nDescription of Test Pro",
                         style: GoogleFonts.poppins(
@@ -64,17 +60,14 @@ class _LandingPageState extends State<LandingPage> {
 ElevatedButton _buildEmail(BuildContext context) {
   return ElevatedButton.icon(
     style: ElevatedButton.styleFrom(
-        onPrimary: Colors.black,
-        primary: Colors.white,
+        foregroundColor: Colors.black,
+        backgroundColor: Colors.white,
         elevation: 5,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
         minimumSize: const Size(250, 50)),
-    onPressed: () {
-      Navigator.pushNamedAndRemoveUntil(context, '/register', (_) {
-        return false;
-      });
-    },
-    icon: Icon(Icons.email),
+    onPressed: () => Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const RegisterPage())),
+    icon: const Icon(Icons.email),
     label: Text("Sign in E-mail",
         style: GoogleFonts.poppins(
           fontSize: 20,
@@ -87,15 +80,16 @@ ElevatedButton _buildEmail(BuildContext context) {
 ElevatedButton _buildGoogle(BuildContext context) {
   return ElevatedButton.icon(
     style: ElevatedButton.styleFrom(
-        onPrimary: Colors.black,
-        primary: Colors.white,
+        foregroundColor: Colors.black,
+        backgroundColor: Colors.white,
         elevation: 5,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
         minimumSize: const Size(250, 50)),
     onPressed: () {
       // Zaman yetmedi
     },
-    icon: FaIcon(FontAwesomeIcons.google, color: Colors.black, size: 22.0),
+    icon:
+        const FaIcon(FontAwesomeIcons.google, color: Colors.black, size: 22.0),
     label: Text("Sign in Google",
         style: GoogleFonts.poppins(
           fontSize: 20,
@@ -108,15 +102,15 @@ ElevatedButton _buildGoogle(BuildContext context) {
 ElevatedButton _buildFacebook(BuildContext context) {
   return ElevatedButton.icon(
     style: ElevatedButton.styleFrom(
-        onPrimary: Colors.black,
-        primary: Colors.white,
+        foregroundColor: Colors.black,
+        backgroundColor: Colors.white,
         elevation: 5,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
         minimumSize: const Size(250, 50)),
     onPressed: () {
       // Zaman yetmedi
     },
-    icon: Icon(Icons.facebook),
+    icon: const Icon(Icons.facebook),
     label: Text("Sign in Facebook",
         style: GoogleFonts.poppins(
           fontSize: 20,
@@ -129,16 +123,11 @@ ElevatedButton _buildFacebook(BuildContext context) {
 ElevatedButton _buildWithoutSigningUp(BuildContext context) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
-        onPrimary: Colors.black,
-        primary: Colors.white,
         elevation: 5,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(32)),
         minimumSize: const Size(250, 50)),
-    onPressed: () {
-      Navigator.pushNamedAndRemoveUntil(context, '/home', (_) {
-        return false;
-      });
-    },
+    onPressed: () => Navigator.push(
+        context, MaterialPageRoute(builder: (context) => const HomePage())),
     child: Text("Without Signing Up",
         style: GoogleFonts.poppins(
           fontSize: 20,

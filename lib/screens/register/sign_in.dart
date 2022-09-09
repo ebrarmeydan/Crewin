@@ -1,13 +1,9 @@
-import 'dart:ui';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import '../home.dart';
+
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -52,7 +48,7 @@ class _SignInPageState extends State<SignInPage> {
                   Column(
                     children: [
                       ClipRRect(
-                        child: Container(
+                        child: SizedBox(
                           width: size.width.w * 0.8,
                           child: _buildForm(context),
                         ),
@@ -181,13 +177,14 @@ class _SignInPageState extends State<SignInPage> {
   ElevatedButton _buildContinueButton(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          onPrimary: Colors.black,
-          primary: Colors.black,
+          foregroundColor: Colors.black,
+          backgroundColor: Colors.black,
           elevation: 5,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.5)),
           minimumSize: const Size(double.infinity, 50)),
       onPressed: () async {
+        print("tiklandi");
         await signInEmailandpassword();
       },
       child: Text("Continue",
@@ -205,7 +202,7 @@ class _SignInPageState extends State<SignInPage> {
       margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
       //padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       backgroundColor: color ?? Colors.red,
-      duration: Duration(milliseconds: 400),
+      duration: const Duration(milliseconds: 400),
       onVisible: onVisible,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
@@ -228,13 +225,15 @@ class _SignInPageState extends State<SignInPage> {
       UserCredential userCredential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(
               email: emailController.text, password: passwordController.text);
-
+      print("deneme");
       FirebaseAuth auth = FirebaseAuth.instance;
       auth.currentUser;
       callSnackbar("Registration Successful ! !", Colors.green, () {
-        Navigator.pushNamedAndRemoveUntil(context, '/home', (_) {
-          return false;
-        });
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (BuildContext context) => const HomePage()));
+        print("deneme123");
       });
     } on FirebaseAuthException catch (error) {
       if (error.code == 'invalid-email') {

@@ -1,8 +1,6 @@
 import 'package:crewin_ornek_proje/screens/register/register_name.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -46,7 +44,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   Column(
                     children: [
                       ClipRRect(
-                        child: Container(
+                        child: SizedBox(
                           width: size.width.w * 0.8,
                           child: _buildForm(context),
                         ),
@@ -107,8 +105,9 @@ class _SignUpPageState extends State<SignUpPage> {
           validator: (value) {
             if (value!.isEmpty) {
               callSnackbar('Email boş olamaz!');
-            } else if (!isValidEmail(value))
+            } else if (!isValidEmail(value)) {
               callSnackbar("Email formatı hatalı!");
+            }
             return null;
           },
           decoration: const InputDecoration(
@@ -191,6 +190,7 @@ class _SignUpPageState extends State<SignUpPage> {
             } else {
               return null;
             }
+            return null;
           },
           textInputAction: TextInputAction.done,
           decoration: InputDecoration(
@@ -213,8 +213,8 @@ class _SignUpPageState extends State<SignUpPage> {
   ElevatedButton _buildContinueButton(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-          onPrimary: Colors.black,
-          primary: Colors.black,
+          foregroundColor: Colors.black,
+          backgroundColor: Colors.black,
           elevation: 5,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(12.5)),
@@ -240,7 +240,7 @@ class _SignUpPageState extends State<SignUpPage> {
       margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 30),
       //padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
       backgroundColor: color ?? Colors.red,
-      duration: Duration(milliseconds: 500),
+      duration: const Duration(milliseconds: 500),
       onVisible: onVisible,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
@@ -267,9 +267,10 @@ class _SignUpPageState extends State<SignUpPage> {
           password: reWritePasswordController.text);
 
       callSnackbar("Kayıt başarılı !", Colors.green, () {
-        Navigator.pushNamedAndRemoveUntil(context, '/registerName', (_) {
-          return false;
-        });
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (BuildContext context) => const RegisterName()));
       });
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-exists' ||

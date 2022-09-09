@@ -44,39 +44,39 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBJPW8qA0xyHR_z5tj2YZzD43jzD2HYA5w',
-    appId: '1:53357102724:web:d791b64dc97eded58464d1',
-    messagingSenderId: '53357102724',
-    projectId: 'crewin-test-project-553dc',
-    authDomain: 'crewin-test-project-553dc.firebaseapp.com',
-    storageBucket: 'crewin-test-project-553dc.appspot.com',
+    apiKey: 'AIzaSyCKXGd1RecNZnv-C4vlkDgbOFqT33ikGTY',
+    appId: '1:293005950606:web:c441dc8ae98bb2e525d3df',
+    messagingSenderId: '293005950606',
+    projectId: 'crewin-test',
+    authDomain: 'crewin-test.firebaseapp.com',
+    storageBucket: 'crewin-test.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyCdOAwGBmNKsug06wg0wNALwBbJRJ9RZPs',
-    appId: '1:53357102724:android:44bbcc08bcb0f0ea8464d1',
-    messagingSenderId: '53357102724',
-    projectId: 'crewin-test-project-553dc',
-    storageBucket: 'crewin-test-project-553dc.appspot.com',
+    apiKey: 'AIzaSyB9fZbr3PASTwJiN41T3CQva_Pfw2abLI0',
+    appId: '1:293005950606:android:626cfefe6e63277225d3df',
+    messagingSenderId: '293005950606',
+    projectId: 'crewin-test',
+    storageBucket: 'crewin-test.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBZJZmke2o8fSuwrFZxmRPE1Z6Pp7iVapE',
-    appId: '1:53357102724:ios:54ea6ea56fd6bc9f8464d1',
-    messagingSenderId: '53357102724',
-    projectId: 'crewin-test-project-553dc',
-    storageBucket: 'crewin-test-project-553dc.appspot.com',
-    iosClientId: '53357102724-8fbdhfj4a4c96lpik47n1rjv8s7r34c4.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDbLEf4WU5RvYVoAu_4feMOWpQLxgsMPzI',
+    appId: '1:293005950606:ios:75b1743b5078986525d3df',
+    messagingSenderId: '293005950606',
+    projectId: 'crewin-test',
+    storageBucket: 'crewin-test.appspot.com',
+    iosClientId: '293005950606-jfsbev14dqv8f7h2i5q8gm2njdr6alh5.apps.googleusercontent.com',
     iosBundleId: 'com.example.testProject',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBZJZmke2o8fSuwrFZxmRPE1Z6Pp7iVapE',
-    appId: '1:53357102724:ios:54ea6ea56fd6bc9f8464d1',
-    messagingSenderId: '53357102724',
-    projectId: 'crewin-test-project-553dc',
-    storageBucket: 'crewin-test-project-553dc.appspot.com',
-    iosClientId: '53357102724-8fbdhfj4a4c96lpik47n1rjv8s7r34c4.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDbLEf4WU5RvYVoAu_4feMOWpQLxgsMPzI',
+    appId: '1:293005950606:ios:75b1743b5078986525d3df',
+    messagingSenderId: '293005950606',
+    projectId: 'crewin-test',
+    storageBucket: 'crewin-test.appspot.com',
+    iosClientId: '293005950606-jfsbev14dqv8f7h2i5q8gm2njdr6alh5.apps.googleusercontent.com',
     iosBundleId: 'com.example.testProject',
   );
 }
