@@ -1,6 +1,5 @@
-import 'package:crewin_ornek_proje/components/register%20components/gender_widget.dart';
 import 'package:flutter/material.dart';
-
+import '../../components/register components/gender_widget.dart';
 
 class GenderSelectionpage extends StatefulWidget {
   const GenderSelectionpage({Key? key}) : super(key: key);

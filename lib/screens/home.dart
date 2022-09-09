@@ -1,6 +1,6 @@
-import 'package:crewin_ornek_proje/screens/landing.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'landing.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -16,8 +16,8 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: IconButton(
-          onPressed: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const LandingPage())),
+          onPressed: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const LandingPage())),
           icon: const Icon(
             Icons.arrow_back,
             size: 30,

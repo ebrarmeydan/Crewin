@@ -1,11 +1,11 @@
-import 'package:crewin_ornek_proje/screens/register/age_user.dart';
-import 'package:crewin_ornek_proje/screens/register/gender_selection.dart';
-import 'package:crewin_ornek_proje/screens/register/height_user.dart';
-import 'package:crewin_ornek_proje/screens/register/register_name.dart';
-import 'package:crewin_ornek_proje/screens/register/weight_user.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'age_user.dart';
+import 'gender_selection.dart';
+import 'height_user.dart';
+import 'register_name.dart';
+import 'weight_user.dart';
 
 class UserProperties extends StatefulWidget {
   const UserProperties({Key? key}) : super(key: key);
@@ -30,9 +30,8 @@ class _UserPropertiesState extends State<UserProperties> {
         backgroundColor: Colors.white,
         elevation: 0.0,
         leading: IconButton(
-          onPressed: () => Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const RegisterName())),
+          onPressed: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const RegisterName())),
           icon: const Icon(
             Icons.arrow_back,
             size: 30,
@@ -63,10 +62,12 @@ class _UserPropertiesState extends State<UserProperties> {
               ElevatedButton(
                 onPressed: () {
                   _pageController.nextPage(
-                      duration: const Duration(milliseconds: 1), curve: Curves.linear);
+                      duration: const Duration(milliseconds: 1),
+                      curve: Curves.linear);
                 },
                 style: ElevatedButton.styleFrom(
-                    foregroundColor: Colors.black, backgroundColor: Colors.black,
+                    foregroundColor: Colors.black,
+                    backgroundColor: Colors.black,
                     elevation: 5,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12.5)),

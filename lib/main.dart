@@ -1,8 +1,8 @@
-import 'package:crewin_ornek_proje/screens/landing.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../service/firebase_options.dart';
+import 'firebase_options.dart';
+import 'screens/landing.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

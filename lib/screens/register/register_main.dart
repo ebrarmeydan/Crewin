@@ -1,9 +1,9 @@
-import 'package:crewin_ornek_proje/screens/landing.dart';
-import 'package:crewin_ornek_proje/screens/register/sign_in.dart';
-import 'package:crewin_ornek_proje/screens/register/sign_up.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:animated_button_bar/animated_button_bar.dart';
+import '../landing.dart';
+import 'sign_in.dart';
+import 'sign_up.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({Key? key}) : super(key: key);
@@ -23,8 +23,8 @@ class _RegisterPageState extends State<RegisterPage> {
         backgroundColor: Colors.white,
         elevation: 0.0,
         leading: IconButton(
-          onPressed: () => Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const LandingPage())),
+          onPressed: () => Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const LandingPage())),
           icon: const Icon(
             Icons.arrow_back,
             size: 30,
@@ -48,7 +48,8 @@ class _RegisterPageState extends State<RegisterPage> {
               ButtonBarEntry(
                 onTap: () {
                   _pageController.previousPage(
-                      duration: const Duration(milliseconds: 1), curve: Curves.linear);
+                      duration: const Duration(milliseconds: 1),
+                      curve: Curves.linear);
                 },
                 child: Text("Sign Up",
                     style: GoogleFonts.poppins(
@@ -60,7 +61,8 @@ class _RegisterPageState extends State<RegisterPage> {
               ButtonBarEntry(
                 onTap: () {
                   _pageController.nextPage(
-                      duration: const Duration(milliseconds: 1), curve: Curves.linear);
+                      duration: const Duration(milliseconds: 1),
+                      curve: Curves.linear);
                 },
                 child: Text("Sign In",
                     style: GoogleFonts.poppins(
